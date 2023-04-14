@@ -1,11 +1,11 @@
 # proyecto2023
 Estructura de Proyecto Lab de Compu II - 2023
 
-### Proyecto: WORDLE
+## Nombre del proyecto: WORDLE
 - Autor: Agustin Lopez Villagra
-- Gh: https://github.com/aguslopez9
-- Link gh-pages: 
-- Tecnologias usadas:
+- Tecnologias usadas: HTML5, CSS3
+-
+
 ## Requisitos del Primer Parcial
 
 ### Sobre el Repositorio
