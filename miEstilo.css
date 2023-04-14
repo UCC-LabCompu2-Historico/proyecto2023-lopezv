@@ -1,0 +1,36 @@
+@font-face {
+    font-family: Press_Start_2P;
+    src: url("Fuente/PressStart2P-Regular.ttf");
+}
+body{
+    background-color: #001014;
+    color: white;
+    font-family: Press_Start_2P, sans-serif;
+    text-align: center;
+    margin-top: 5%;
+}
+div{
+    padding: 2vh;
+}
+.inicio{
+    font-size: 5vw;
+}
+.botonesInicio{
+    color: white;
+    font-size: 280%;
+    text-decoration: none;
+}
+.botonesCJ{
+    color: white;
+    font-size: 3vh;
+    text-decoration: none;
+}
+.comoJugar{
+    font-size: 2vh;
+}
+.verde{
+    color: #11D147;
+}
+.amarillo{
+    color: #FEEA00;
+}
