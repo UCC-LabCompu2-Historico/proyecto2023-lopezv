@@ -9,7 +9,6 @@ body {
     font-family: Press_Start_2P, sans-serif;
     text-align: center;
     margin: auto;
-
     padding: 45px;
 }
 
@@ -19,6 +18,7 @@ h1 {
 
 div {
     padding: 4vh;
+    margin: 1vh;
 }
 
 p {
@@ -35,8 +35,26 @@ p {
 .boton {
     color: white;
     text-decoration: none;
-    margin: auto;
-    padding: 0 10% 0 10%;
+}
+a:hover{
+    transition: transform 0.2s ease-in-out;
+    color: #11D147;
+    transform: scale(1.5);
+}
+
+.botonesComojugar{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'boton boton';
+}
+
+.carteles{
+    border: 3px solid white;
+    border-radius: 5px;
+    height: 150px;
+    width: 350px;
+    font-size: 100%;
+    margin: 5%;
 }
 
 .verde {
