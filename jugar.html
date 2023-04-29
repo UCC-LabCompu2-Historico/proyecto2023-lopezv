@@ -10,7 +10,8 @@
 </head>
 <body>
 <div>PUNTAJE: X</div>
-<table>
+<table class="tablero">
+    <caption>W<span class="verde">O</span>RD<span class="verde">L</span><span class="amarillo">E</span></caption>
     <tr>
         <td></td>
         <td></td>
@@ -54,25 +55,30 @@
         <td></td>
     </tr>
 </table>
-
+<div id="ingresarPalabra">
+    <label for="palabra">INGRESE UNA PALABRA: <br></label>
+    <input type="text" id="palabra" name="palabra" maxlength="5">
+</div>
 <div><a class="boton" href="index.html">INICIO</a></div>
-<div>
-    <div class="carteles">
+
+<div class="carteles">
+    <div class="cartelVerde">
+        <img src="Imagenes/trophy.png" alt="Trofeo">
         <p>ADIVINASTE!!</p>
         <p>+100</p>
-        <a class="boton">SIGUIENTE WORDLE</a>
+        <a class="boton" href="jugar.html">SIGUIENTE WORDLE</a>
     </div>
-    <div class="carteles">
-        <p>GAME OVER</p>
+    <div class="cartelRojo">
+        <p id="gameover">GAME<br>OVER</p>
         <p>PUNTAJE FINAL: X</p>
-        <a class="boton">INICIO</a>
+        <a class="boton" href="index.html">INICIO</a>
     </div>
-    <div class="carteles">
+    <div class="cartelRojo">
+        <img src="Imagenes/6514911.png" alt="Cartel de advertencia">
         <p>SI PRESIONAS VOLVER, <br>TU PUNTAJE SE PERDERA</p>
-        <a class="boton">VOLVER</a>
-        <a class="boton">SEGUIR</a>
+        <a class="boton" href="index.html">VOLVER</a>
+        <a class="boton" href="jugar.html">SEGUIR</a>
     </div>
 </div>
-
 </body>
 </html>

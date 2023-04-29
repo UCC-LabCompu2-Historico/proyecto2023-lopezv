@@ -6,14 +6,14 @@ Estructura de Proyecto Lab de Compu II - 2023
 
 - Autor: Agustin Lopez Villagra
 - Tecnologias usadas: HTML5, CSS3
--
+- Contenido de la pagina: Clon de "Wordle"
 
 ## Requisitos del Primer Parcial
 
 ### Sobre el Repositorio
 
 - [X] El proyecto debe estar subido al repositorio adecuado "Proyecto2023-ApellidoAlumno1-ApellidoAlumno2"
-- [ ] Modificar el Readme.MD y colocar información del proyecto/página (mínimamente: título del proyecto, autores con
+- [X] Modificar el Readme.MD y colocar información del proyecto/página (mínimamente: título del proyecto, autores con
   nombre y apellido, link de gh-pages, contenido de la página, listado de tecnologías usadas, etc)
 - [X] La estructura del proyecto debe ser adecuada (crear una carpeta para las imágenes, otra para los
   sketch/mockups/Wireframes). Es importante que contenga SKETCH y MOCKUP/WIREFRAME (debe estar en formato: PDF, PNG o
@@ -42,11 +42,11 @@ Estructura de Proyecto Lab de Compu II - 2023
 - [X] Emplear al menos 3 etiquetas semánticas diferentes (header, nav, aside, main, section, article, footer)
 - [X] Emplear ```<header></header>```. En el contenido de la cabecera debe haber un título ```<h1></h1>```, puede tener
   color de fondo, algún logotipo, etc.
-- [ ] Debe haber por lo menos una etiqueta ```<img>``` en la página.
-- [ ] La estructura de la página debe estar definida con ```<div></div>```
-- [ ] Debe contener al menos 3 elementos de tipo ```<input>``` o ```<select>``` ó ```<button>``` que le permitan al
+- [X] Debe haber por lo menos una etiqueta ```<img>``` en la página.
+- [X] La estructura de la página debe estar definida con ```<div></div>```
+- [X] Debe contener al menos 3 elementos de tipo ```<input>``` o ```<select>``` ó ```<button>``` que le permitan al
   usuario ingresar valores para poder realizar un cálculo de un ejercicio.
-- [ ] Debe contener un ```<canvas>```, para que posteriormente (en la 2da etapa) se grafique alguna imagen
+- [X] Debe contener un ```<canvas>```, para que posteriormente (en la 2da etapa) se grafique alguna imagen
   representativa del ejercicio. (el desarrollo del gráfico se realizará cuando se vea la unidad de “Orientación a
   Eventos”)
 - [X] No espaciar con excesivos ```<br>```. Utilizar márgenes, paddings, etc.
@@ -59,15 +59,15 @@ Estructura de Proyecto Lab de Compu II - 2023
 - [X] El estilo de los elementos debe establecerse en un archivo CSS (prohibido poner el atributo style a los elementos
   o emplear estilos incrustados).
 - [X] El CSS debe contar mínimo con un tipo de cada forma (por Tag, por ID y por clase).
-- [ ] Se debe emplear pseudoclase
+- [X] Se debe emplear pseudoclase
 - [X] No emplear !important
 
 ### Sobre Accesibilidad:
 
-- [ ] Toda imagen debe tener su etiqueta alt
-- [ ] Todo ```<input>``` o ```<select>``` debe tener su ```<label>```
-- [ ] Los labels deben contener el atributo **for** (el for debe contener el id del input al cual se referencia)
-- [ ] Si hay una tabla en la página, debe contener ```<caption></caption>```
+- [X] Toda imagen debe tener su etiqueta alt
+- [X] Todo ```<input>``` o ```<select>``` debe tener su ```<label>```
+- [X] Los labels deben contener el atributo **for** (el for debe contener el id del input al cual se referencia)
+- [X] Si hay una tabla en la página, debe contener ```<caption></caption>```
 
 ### Sobre las correcciones
 

@@ -14,6 +14,7 @@ body {
 
 h1 {
     padding: 15px;
+    text-shadow: -4px -4px 0 black, 4px -4px 0 black, -4px 4px 0 black, 4px 4px 0 black;
 }
 
 div {
@@ -21,9 +22,23 @@ div {
     margin: 1vh;
 }
 
+.comojugar {
+    padding: 0;
+}
+
 p {
+    line-height: 1.5;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+}
+
+.comojugar p {
+
     padding: 3px;
     line-height: 1.8;
+}
+
+.botonesComojugar a {
+    margin: 0 90px 0 90px;
 }
 
 #principal {
@@ -35,26 +50,20 @@ p {
 .boton {
     color: white;
     text-decoration: none;
+    text-shadow: -4px -4px 0 black, 4px -4px 0 black, -4px 4px 0 black, 4px 4px 0 black;
 }
-a:hover{
+
+#principal a:hover {
     transition: transform 0.2s ease-in-out;
     color: #11D147;
-    transform: scale(1.5);
+    text-shadow: -4px -4px 0 black, 4px -4px 0 black, -4px 4px 0 black, 4px 4px 0 black, 4px 4px 0 white;
 }
 
-.botonesComojugar{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: 'boton boton';
-}
+a:hover {
+    transition: transform 0.2s ease-in-out;
+    color: #11D147;
+    text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black, 3px 3px 0 white;
 
-.carteles{
-    border: 3px solid white;
-    border-radius: 5px;
-    height: 150px;
-    width: 350px;
-    font-size: 100%;
-    margin: 5%;
 }
 
 .verde {
@@ -73,8 +82,60 @@ table {
 }
 
 td {
+    border: 3px solid white;
+    border-radius: 5px;
+}
+
+.tablero td {
     height: 40px;
     width: 40px;
+}
+
+.carteles div {
+    height: 200px;
+    width: 450px;
+    font-size: 100%;
+    border-radius: 5px;
+    margin: 15px auto 15px auto;
+
+}
+
+#gameover {
+    font-weight: bolder;
+    line-height: 1.2;
+    font-size: 280%;
+    text-shadow: 6px 3px 0 red;
+    margin: 0;
+
+}
+
+.cartelRojo {
+    border: 3px solid red;
+}
+
+.cartelVerde {
+    border: 3px solid #11D147;
+}
+
+img {
+    height: 30%;
+
+}
+
+input {
+    font-family: Press_Start_2P, sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 20px;
     border: 3px solid white;
+    border-radius: 5px;
+    color: #001014;
+    outline: none;
+    background-color: white;
+}
+
+#ingresarPalabra {
+    margin-top: 30px;
+    padding: 10px;
     border-radius: 5px;
 }
