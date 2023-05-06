@@ -53,6 +53,22 @@ p {
     text-shadow: -4px -4px 0 black, 4px -4px 0 black, -4px 4px 0 black, 4px 4px 0 black;
 }
 
+button {
+    font-family: Press_Start_2P, sans-serif;
+    font-size: 100%;
+    background-color: #001014;
+    color: white;
+    border: none;
+    text-shadow: -4px -4px 0 black, 4px -4px 0 black, -4px 4px 0 black, 4px 4px 0 black;
+
+}
+
+button:hover {
+    transition: transform 0.2s ease-in-out;
+    color: #11D147;
+    text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black, 3px 3px 0 white;
+}
+
 #principal a:hover {
     transition: transform 0.2s ease-in-out;
     color: #11D147;
