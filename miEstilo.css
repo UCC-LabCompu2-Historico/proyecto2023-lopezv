@@ -21,7 +21,16 @@ div {
     padding: 4vh;
     margin: 1vh;
 }
+.tablero input {
+    height: 40px;
+    width: 40px;
+    background-color: #001014;
+    border: none;
+    margin: 0;
+    color: white;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
 
+}
 .comojugar {
     padding: 0;
 }
@@ -32,7 +41,6 @@ p {
 }
 
 .comojugar p {
-
     padding: 3px;
     line-height: 1.8;
 }
@@ -113,6 +121,8 @@ td {
     font-size: 100%;
     border-radius: 5px;
     margin: 15px auto 15px auto;
+    display: none;
+    z-index: 0;
 
 }
 
