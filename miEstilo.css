@@ -133,15 +133,32 @@ td {
     text-shadow: 6px 3px 0 red;
     margin: 0;
 
+
 }
 
 .cartelRojo {
     border: 3px solid red;
+    display: none;
+    margin: auto;
+    background-color: #001014;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10000;
 }
-
 .cartelVerde {
     border: 3px solid #11D147;
+    background-color: #001014;
+    margin: auto;
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10000;
 }
+
 
 img {
     height: 30%;

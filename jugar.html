@@ -10,7 +10,7 @@
     <script type="text/javascript" src="funcionesJs.js"></script>
 </head>
 <body>
-<div>PUNTAJE: X</div>
+<div id="puntaje">PUNTAJE:</div>
 <table class="tablero" id="tablero">
     <caption>W<span class="verde">O</span>RD<span class="verde">L</span><span class="amarillo">E</span></caption>
     <tbody>
@@ -61,21 +61,20 @@
 <div id="ingresarPalabra">
     <label id="labelCargar" for="cargar">INGRESE UNA PALABRA: <br></label>
     <input type="text" id="cargar" maxlength="5" oninput="cargarPalabra()">
-    <p id="mostrarPalabra" onchange="compararPalabra()"></p>
+
 </div>
 <div><a class="boton" href="index.html">INICIO</a></div>
-
 <div class="carteles">
-    <div id="ganaste" lass="cartelVerde">
+    <div id="ganaste" class="cartelVerde">
         <img src="Imagenes/trophy.png" alt="Trofeo">
         <p>ADIVINASTE!!</p>
         <p>+100</p>
-        <button href="jugar.html">SIGUIENTE WORDLE</button>
+        <button type="button" onclick="location.href='jugar.html'">SIGUIENTE WORDLE</button>
     </div>
     <div id="perdiste" class="cartelRojo">
         <p id="gameover">GAME<br>OVER</p>
         <p>PUNTAJE FINAL: X</p>
-        <a class="boton" href="index.html">INICIO</a>
+        <p id="mostrarPalabra" onchange="compararPalabra()"></p>
     </div>
     <div id="alInicio" class="cartelRojo">
         <img src="Imagenes/6514911.png" alt="Cartel de advertencia">
