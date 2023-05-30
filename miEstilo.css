@@ -21,6 +21,26 @@ div {
     padding: 4vh;
     margin: 1vh;
 }
+
+footer {
+    text-align: end;
+    font-size: 10px;
+    margin-top: 100px;
+}
+
+#puntosDiv{
+    margin: auto;
+    text-shadow: -4px -4px 0 black, 4px -4px 0 black, -4px 4px 0 black, 4px 4px 0 black;
+}
+#puntaje {
+    color: white;
+    font-size: 15px;
+    background-color: #001014;
+    border: none;
+    width: 100px;
+    margin: auto;
+    text-shadow: -4px -4px 0 black, 4px -4px 0 black, -4px 4px 0 black, 4px 4px 0 black;
+}
 .tablero input {
     height: 40px;
     width: 40px;
@@ -30,6 +50,10 @@ div {
     color: white;
     text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
 
+}
+.tablero caption{
+    font-size: 15px;
+    text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black;
 }
 .comojugar {
     padding: 0;
@@ -178,7 +202,14 @@ input {
 }
 
 #ingresarPalabra {
-    margin-top: 30px;
+    text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black;    margin-top: 30px;
     padding: 10px;
     border-radius: 5px;
+}
+
+canvas {
+    width: 600px;
+    height: 100px;
+    border-radius: 5px;
+    background: #001014;
 }

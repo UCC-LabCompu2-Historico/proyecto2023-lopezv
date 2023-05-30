@@ -9,8 +9,9 @@
     <link rel="stylesheet" href="miEstilo.css" type="text/css">
     <script type="text/javascript" src="funcionesJs.js"></script>
 </head>
-<body>
-<div id="puntaje">PUNTAJE:</div>
+<body onload="dibujarCuadrados()">
+<div id="puntosDiv">PUNTAJE<br><input id="puntaje" onchange="puntaje(this.value)" value="0"></div>
+
 <table class="tablero" id="tablero">
     <caption>W<span class="verde">O</span>RD<span class="verde">L</span><span class="amarillo">E</span></caption>
     <tbody>
@@ -63,13 +64,13 @@
     <input type="text" id="cargar" maxlength="5" oninput="cargarPalabra()">
 
 </div>
-<div><a class="boton" href="index.html">INICIO</a></div>
+<div><button class="boton" onclick="botonInicio()">INICIO</button></div>
 <div class="carteles">
     <div id="ganaste" class="cartelVerde">
         <img src="Imagenes/trophy.png" alt="Trofeo">
         <p>ADIVINASTE!!</p>
         <p>+100</p>
-        <button type="button" onclick="location.href='jugar.html'">SIGUIENTE WORDLE</button>
+        <button type="button" onclick="location.href='jugar.html';palabraAAdivinar()">SIGUIENTE WORDLE</button>
     </div>
     <div id="perdiste" class="cartelRojo">
         <p id="gameover">GAME<br>OVER</p>
@@ -80,8 +81,9 @@
         <img src="Imagenes/6514911.png" alt="Cartel de advertencia">
         <p>SI PRESIONAS VOLVER, <br>TU PUNTAJE SE PERDERA</p>
         <a class="boton" href="index.html">VOLVER</a>
-        <button href="jugar.html">SEGUIR</button>
+        <button href="jugar.html" onclick="botonSeguirJugando()">SEGUIR</button>
     </div>
 </div>
+<canvas id="myCanvas"></canvas>
 </body>
 </html>

@@ -1,14 +1,14 @@
 let n = 0;
 const palabras = ["Amigo", "Aviso", "Ancho", "Arena", "Asado", "arbol",
     "Banco", "Banda", "BARCO", "Bolsa", "Burro", "barro", "bajar",
-    "Carpa", "Campo", "Cenar", "Costo", "Crudo", "carta", "carro", "cerro", "cobre", "cabra",
+    "Carpa", "Campo", "Cenar", "Costo", "Crudo", "carta", "carro", "cerro", "cobre", "cabra", "cuero",
     "Denso", "Datos", "Dados", "Doble", "Dulce", "dardo",
     "Enero", "Error", "Erizo", "Estar", "Echar",
     "Feria", "Fallo", "Filas", "Fuego", "Ficha",
     "Gatos", "Grano", "Globo", "Gordo", "Grave",
-    "Hielo", "Horno", "Hongo", "Humor", "Hacha", "hacer",
+    "Hielo", "Horno", "Hongo", "Humor", "Hacha", "hacer", "hueso", "huevo", "habla",
     "Indio", "Islas", "Igual", "Impar", "Idolo",
-    "Joven", "Julio", "Japon", "Jugar", "Jarra",
+    "Joven", "Julio", "Japon", "Jugar", "Jarra", "jabon",
     "Koala", "Karma",
     "Libro", "Lugar", "Lente", "Largo", "Llave", "libre", "luces",
     "Metro", "Manos", "Miedo", "Marco", "Melon",
@@ -17,37 +17,39 @@ const palabras = ["Amigo", "Aviso", "Ancho", "Arena", "Asado", "arbol",
     "Pecho", "perro", "Poder", "Paris", "Pinza", "pollo",
     "Queso", "Quema", "Queda", "Quiso",
     "Rubio", "Rango", "Radio", "Ronda", "Reloj", "robar",
-    "Secar", "Sobre", "Salsa", "Sello", "Sabio",
+    "Secar", "Sobre", "Salsa", "Sello", "Sabio", "suelo",
     "Trono", "Torre", "Tabla", "Tenis", "Terco",
     "Union", "Unico", "Untar",
     "Vuelo", "Voces", "Valor", "Verde", "Velas",
     "Wafle",
     "Yendo", "Yates",
-    "Zorro", "Zafar", "Zumba", "Zonas", "Zurdo"
+    "Zorro", "Zafar", "Zumba", "Zonas", "Zurdo", "zebra"
 ]
 
 /**
- * Elige la palabra oculta que el usuario tendra que adivinar
+ * Elige aleatoriamente la palabra que el jugador va a tener que adivinar y la guarda en localStorage
  * @method palabraAAdivinar
  */
 
-palabraAAdivinar = () => {
+let palabraAAdivinar = () => {
     let indiceAleatorio = Math.floor(Math.random()*palabras.length);
     let palabraAleatoria = palabras[indiceAleatorio];
     localStorage.setItem("PA",palabraAleatoria);
 }
 
 /**
- * Verifica que la palabra ingresada por el usuario sea valida
- * @method cargarPalabra
+ * Descripción de que hace la función
+ * @method Nombre de la función
+ * @param {string} ParámetroA - Explicación de que valor almacena ParámetroA
+ * @param {number} ParámetroB - Explicación de que valor almacena ParámetroB
+ * @return Valor que retorna
  */
-
-cargarPalabra = () => {
+let cargarPalabra = () => {
     let coincide = false;
     let palabra = document.getElementById("cargar").value.toUpperCase();
-    let letrasIntento = document.getElementsByName("letra");
-    let colorCuadrado = document.getElementById("cargar");
-    let contenidoCuadrado = document.getElementById("cargar");
+    const letrasIntento = document.getElementsByName("letra");
+    const colorCuadrado = document.getElementById("cargar");
+    const contenidoCuadrado = document.getElementById("cargar");
 
     for (let i = 0; i < palabras.length; i++) {
         if (palabra === palabras[i].toUpperCase()) {
@@ -71,21 +73,18 @@ cargarPalabra = () => {
     }
 }
 /**
- * Compara las letras de la palabra valida ingresada con las letras de la palabra a advinar
- * @method intento - recibe una por una las letras del intento ingresado por el usuario
- * @method i - indice de la letra
+ * Compara la palabra ingresada por el usuario con la palabra a adivinar
+ * @method compararPalabra
+ * @param {string} intento - Palabra ingresada por el usuario
  */
 
 compararPalabra = (intento) => {
     let iguales = 0;
-    let verde = false;
     const almacenado = localStorage.getItem("PA");
     console.log(almacenado, almacenado.length);
     for (let i=0;i<intento.length;i++) {
         for (let j = 0; j < almacenado.length; j++) {
             if (intento[i].toUpperCase() === almacenado[j].toUpperCase()) {
-                console.log(almacenado[j], j);
-                console.log(intento[i], i);
                 if (i === j) {
                     document.getElementsByName("letra")[n + i].style.backgroundColor = "#11D147";
                     document.getElementsByClassName("celda")[n + i].style.backgroundColor = "#11D147";
@@ -100,19 +99,96 @@ compararPalabra = (intento) => {
     }
     carteles(iguales, almacenado);
 }
-
-carteles = (iguales, almacenado) => {
+/**
+ * Dependiendo si el jugador encuentra o no la palabra oculta, muestra un cartel diferente
+ * @method carteles
+ * @param {string} almacenado - Explicación de que valor almacena ParámetroA
+ * @param {number} iguales - Explicación de que valor almacena ParámetroB
+ * @return Valor que retorna
+ */
+let carteles = (iguales, almacenado) => {
+    const cartelPerdiste = document.getElementById("perdiste");
+    const cartelGanaste = document.getElementById("ganaste");
+    const inputCargar = document.getElementById("cargar");
+    const labelCargar = document.getElementById("labelCargar");
     if (n===25 && iguales<5){
-        document.getElementById("perdiste").style.display = 'block'
+        cartelPerdiste.style.display = 'block'
         document.getElementById("mostrarPalabra").innerHTML = "PALABRA OCULTA: " + almacenado.toUpperCase();
-        document.getElementById("cargar").style.display = 'none';
-        //document.getElementById("puntaje").style.display = 'none';
-        document.getElementById("labelCargar").style.display = 'none';
+        inputCargar.style.display = 'none';
+        labelCargar.style.display = 'none';
     }
     else if (iguales === 5){
-        document.getElementById("ganaste").style.display = 'block'
-        document.getElementById("cargar").style.display = 'none';
-        document.getElementById("labelCargar").style.display = 'none';
-        document.getElementById("puntaje").innerHTML += 100;
+        cartelGanaste.style.display = 'block'
+        inputCargar.style.display = 'none';
+       labelCargar.style.display = 'none';
+        puntaje();
     }
+}
+/**
+ * Descripción de que hace la función
+ * @method Nombre de la función
+ * @param {string} ParámetroA - Explicación de que valor almacena ParámetroA
+ * @param {number} ParámetroB - Explicación de que valor almacena ParámetroB
+ * @return Valor que retorna
+ */
+let puntaje = (puntos) => {
+    let puntajeHtml = document.getElementById("puntaje");
+    puntos = parseInt(puntos);
+    puntos = puntos + 100;
+    puntajeHtml.value = puntos.toString();
+
+}
+/**
+ * Descripción de que hace la función
+ * @method Nombre de la función
+ * @param {string} ParámetroA - Explicación de que valor almacena ParámetroA
+ * @param {number} ParámetroB - Explicación de que valor almacena ParámetroB
+ * @return Valor que retorna
+ */
+let botonInicio = () => {
+    if (n<25){
+        document.getElementById("alInicio").style.display = 'block';
+        document.getElementById("labelCargar").style.display = 'none';
+        document.getElementById("cargar").style.display = 'none';
+
+    }
+    else {
+        location.href = "index.html";
+    }
+}
+/**
+ * Descripción de que hace la función
+ * @method Nombre de la función
+ * @param {string} ParámetroA - Explicación de que valor almacena ParámetroA
+ * @param {number} ParámetroB - Explicación de que valor almacena ParámetroB
+ * @return Valor que retorna
+ */
+let botonSeguirJugando = () => {
+    document.getElementById("alInicio").style.display = 'none';
+}
+/**
+* Descripción de que hace la función
+* @method Nombre de la función
+* @param {string} ParámetroA - Explicación de que valor almacena ParámetroA
+* @param {number} ParámetroB - Explicación de que valor almacena ParámetroB
+* @return Valor que retorna
+*/
+let dibujarCuadrados = () => {
+    const canvas = document.getElementById("myCanvas");
+    const ctx = canvas.getContext("2d");
+
+    let xMax = canvas.width;
+    let yMax = canvas.height;
+    ctx.strokeStyle = "white";
+    ctx.fillStyle = "rgba(0, 0, 0, 0)";
+    ctx.lineWidth = 1;
+    //dibujar rectangulo
+    let margen = 5;
+    ctx.strokeRect(5, margen, 50, yMax-margen*2);
+    ctx.strokeRect(60+margen, margen, 50, yMax-margen*2);
+    ctx.strokeRect(120+margen, margen, 50, yMax-margen*2);
+    ctx.strokeRect(180+margen, margen, 50, yMax-margen*2);
+    ctx.strokeRect(240+margen, margen, 50, yMax-margen*2);
+
+
 }
