@@ -32,7 +32,7 @@ footer {
     margin: auto;
     text-shadow: -4px -4px 0 black, 4px -4px 0 black, -4px 4px 0 black, 4px 4px 0 black;
 }
-#puntaje {
+.puntaje {
     color: white;
     font-size: 15px;
     background-color: #001014;
@@ -157,13 +157,11 @@ td {
     text-shadow: 6px 3px 0 red;
     margin: 0;
 
-
 }
 
 .cartelRojo {
     border: 3px solid red;
     display: none;
-    margin: auto;
     background-color: #001014;
     position: absolute;
     top: 50%;
@@ -171,10 +169,10 @@ td {
     transform: translate(-50%, -50%);
     z-index: 10000;
 }
+
 .cartelVerde {
     border: 3px solid #11D147;
     background-color: #001014;
-    margin: auto;
     display: none;
     position: absolute;
     top: 50%;
@@ -186,7 +184,6 @@ td {
 
 img {
     height: 30%;
-
 }
 
 input {
@@ -208,8 +205,9 @@ input {
 }
 
 canvas {
-    width: 600px;
-    height: 100px;
+    width: 500px;
+    height: 300px;
+    border: 3px solid white;
     border-radius: 5px;
-    background: #001014;
+    margin: auto;
 }
