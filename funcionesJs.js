@@ -120,11 +120,8 @@ let carteles = (iguales, almacenado) => {
 }
 
 /**
- * Descripción de que hace la función
- * @method Nombre de la función
- * @param {string} ParámetroA - Explicación de que valor almacena ParámetroA
- * @param {number} ParámetroB - Explicación de que valor almacena ParámetroB
- * @return Valor que retorna
+ * Muestra y actualiza el puntaje a medida de que se pasa de nivel
+ * @method mostrarPuntaje
  */
 
 let mostrarPuntaje = () => {
@@ -135,11 +132,8 @@ let mostrarPuntaje = () => {
 }
 
 /**
- * Descripción de que hace la función
- * @method Nombre de la función
- * @param {string} ParámetroA - Explicación de que valor almacena ParámetroA
- * @param {number} ParámetroB - Explicación de que valor almacena ParámetroB
- * @return Valor que retorna
+ * En caso de que el usuario apriete el boton inicio mientras juega, muestra el cartel de advertencia correspondiente
+ * @method botonInicio
  */
 let botonInicio = () => {
     if (n < 25) {
@@ -149,21 +143,15 @@ let botonInicio = () => {
     }
 }
 /**
- * Descripción de que hace la función
- * @method Nombre de la función
- * @param {string} ParámetroA - Explicación de que valor almacena ParámetroA
- * @param {number} ParámetroB - Explicación de que valor almacena ParámetroB
- * @return Valor que retorna
+ * Al aparecer el cartel de advertencia, el usuario puede elegir seguir jugando y no ir al incio
+ * @method seguirJugando
  */
 let botonSeguirJugando = () => {
     document.getElementById("alInicio").style.display = 'none';
 }
 /**
- * Descripción de que hace la función
- * @method Nombre de la función
- * @param {string} ParámetroA - Explicación de que valor almacena ParámetroA
- * @param {number} ParámetroB - Explicación de que valor almacena ParámetroB
- * @return Valor que retorna
+ * canvas que imita el salvapantallas de los dvd
+ * @method canvas
  */
 var x = 0;
 var dX = 1;
