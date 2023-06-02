@@ -125,7 +125,7 @@ let carteles = (iguales, almacenado) => {
  */
 
 let mostrarPuntaje = () => {
-    document.getElementById("puntajeArriba").innerText = "PUNTAJE " + (nivel*100).toString();
+    document.getElementById("puntajeArriba").innerHTML = "PUNTAJE " + (nivel*100).toString();
     document.getElementById("puntajeFinal").innerHTML = "PUNTAJE " + (nivel*100).toString();
     nivel++;
     console.log(nivel);
@@ -153,10 +153,10 @@ let botonSeguirJugando = () => {
  * canvas que imita el salvapantallas de los dvd
  * @method canvas
  */
-var x = 0;
-var dX = 1;
-var y =0;
-var dY = 1;
+let x = 0;
+let dX = 1;
+let y =0;
+let dY = 1;
 let canvas = () => {
     const canvas = document.getElementById("myCanvas");
     const ctx = canvas.getContext("2d");
