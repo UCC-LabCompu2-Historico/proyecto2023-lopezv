@@ -116,6 +116,7 @@ let carteles = (iguales, almacenado) => {
         cartelGanaste.style.display = 'block'
         inputCargar.style.display = 'none';
         labelCargar.style.display = 'none';
+
     }
 }
 
@@ -125,10 +126,16 @@ let carteles = (iguales, almacenado) => {
  */
 
 let mostrarPuntaje = () => {
-    document.getElementById("puntajeArriba").innerHTML = "PUNTAJE " + (nivel*100).toString();
-    document.getElementById("puntajeFinal").innerHTML = "PUNTAJE " + (nivel*100).toString();
-    nivel++;
+    let nivel = localStorage.getItem("nivel");
+    document.getElementById("puntajeArriba").innerHTML = "PUNTAJE " + (nivel * 100).toString();
+    document.getElementById("puntajeFinal").innerHTML = "PUNTAJE " + (nivel * 100).toString();
     console.log(nivel);
+}
+
+let guardarPuntaje = () => {
+    localStorage.setItem("nivel", nivel);
+    window.open("jugar.html", "_self");
+    nivel++;
 }
 
 /**
@@ -155,7 +162,7 @@ let botonSeguirJugando = () => {
  */
 let x = 0;
 let dX = 1;
-let y =0;
+let y = 0;
 let dY = 1;
 let canvas = () => {
     const canvas = document.getElementById("myCanvas");

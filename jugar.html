@@ -10,12 +10,12 @@
     <link rel="shorcut icon" href="Imagenes/favicon.ico" type="image/x-icon">
     <script type="text/javascript" src="funcionesJs.js"></script>
 </head>
-<body onload="canvas();setInterval(canvas, 20);mostrarPuntaje()">
+<body onload="canvas();setInterval(canvas, 20);mostrarPuntaje();palabraAAdivinar()">
 <div id="puntajeArriba" class="puntosDiv"></div>
 
 <table class="tablero" id="tablero">
     <caption>W<span class="verde">O</span>RD<span class="verde">L</span><span class="amarillo">E</span></caption>
-    <tbody >
+    <tbody>
     <tr class="intento">
         <td class="celda"><label>
             <input type="text" name="letra" disabled>
@@ -125,13 +125,15 @@
     <input type="text" id="cargar" maxlength="5" oninput="cargarPalabra(this.value)">
 
 </div>
-<div><button class="boton" onclick="botonInicio()">INICIO</button></div>
+<div>
+    <button class="boton" onclick="botonInicio()">INICIO</button>
+</div>
 <div class="carteles">
     <div id="ganaste" class="cartelVerde">
         <img src="Imagenes/trophy.png" alt="Trofeo">
         <p>ADIVINASTE!!</p>
         <p>+100</p>
-        <button type="button" onclick="location.href='jugar.html';palabraAAdivinar()">SIGUIENTE WORDLE</button>
+        <button type="button" onclick="guardarPuntaje();">SIGUIENTE WORDLE</button>
     </div>
     <div id="perdiste" class="cartelRojo">
         <p id="gameover">GAME<br>OVER</p>
@@ -142,7 +144,7 @@
         <img src="Imagenes/6514911.png" alt="Cartel de advertencia">
         <p>SI PRESIONAS VOLVER, <br>TU PUNTAJE SE PERDERA</p>
         <a class="boton" href="index.html">VOLVER</a>
-        <button type="button"  onclick="href='jugar.html';botonSeguirJugando()">SEGUIR</button>
+        <button type="button" onclick="href='jugar.html';botonSeguirJugando()">SEGUIR</button>
     </div>
 </div>
 <canvas id="myCanvas"></canvas>
