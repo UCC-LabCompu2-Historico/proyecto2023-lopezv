@@ -10,12 +10,12 @@
     <link rel="shorcut icon" href="Imagenes/favicon.ico" type="image/x-icon">
     <script type="text/javascript" src="funcionesJs.js"></script>
 </head>
-<body onload="canvas();setInterval(canvas, 20)">
-<div class="puntosDiv">PUNTAJE<br><input type="text" class="puntaje" onload="mostrarPuntaje()" value="0"></div>
+<body onload="canvas();setInterval(canvas, 20);mostrarPuntaje()">
+<div id="puntajeArriba" class="puntosDiv"></div>
 
 <table class="tablero" id="tablero">
     <caption>W<span class="verde">O</span>RD<span class="verde">L</span><span class="amarillo">E</span></caption>
-    <tbody>
+    <tbody >
     <tr class="intento">
         <td class="celda"><input type="text" name="letra" disabled></td>
         <td class="celda"><input type="text" name="letra" disabled></td>
@@ -75,7 +75,7 @@
     </div>
     <div id="perdiste" class="cartelRojo">
         <p id="gameover">GAME<br>OVER</p>
-        <p>PUNTAJE FINAL: <input type="text" class="puntaje" onchange="mostrarPuntaje()"></p>
+        <p id="puntajeFinal">PUNTAJE FINAL 0</p>
         <p id="mostrarPalabra" onchange="compararPalabra()"></p>
     </div>
     <div id="alInicio" class="cartelRojo">

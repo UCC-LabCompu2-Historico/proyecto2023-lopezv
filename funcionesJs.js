@@ -1,4 +1,5 @@
 let n = 0;
+let nivel = 0;
 const palabras = ["Amigo", "Aviso", "Ancho", "Arena", "Asado", "arbol",
     "Banco", "Banda", "BARCO", "Bolsa", "Burro", "barro", "bajar",
     "Carpa", "Campo", "Cenar", "Costo", "Crudo", "carta", "carro", "cerro", "cobre", "cabra", "cuero", "curva",
@@ -21,7 +22,6 @@ const palabras = ["Amigo", "Aviso", "Ancho", "Arena", "Asado", "arbol",
     "Trono", "Torre", "Tabla", "Tenis", "Terco",
     "Union", "Unico", "Untar",
     "Vuelo", "Voces", "Valor", "Verde", "Velas", "viejo",
-    "Wafle",
     "Yendo", "Yates",
     "Zorro", "Zafar", "Zumba", "Zonas", "Zurdo", "zebra"
 ]
@@ -101,6 +101,7 @@ let compararPalabra = (intento) => {
  * @param {string} almacenado - Palabra a adivinar
  * @param {number} iguales - Cantidad de caracteres que coinciden en letra como en posicion
  */
+
 let carteles = (iguales, almacenado) => {
     const cartelPerdiste = document.getElementById("perdiste");
     const cartelGanaste = document.getElementById("ganaste");
@@ -115,27 +116,22 @@ let carteles = (iguales, almacenado) => {
         cartelGanaste.style.display = 'block'
         inputCargar.style.display = 'none';
         labelCargar.style.display = 'none';
-        puntaje();
     }
 }
+
 /**
- * Actualiza el puntaje cada vez que el jugador pasa de nivel
- * @method puntaje
- * @param {string} puntos - Explicación de que valor almacena ParámetroB
+ * Descripción de que hace la función
+ * @method Nombre de la función
+ * @param {string} ParámetroA - Explicación de que valor almacena ParámetroA
+ * @param {number} ParámetroB - Explicación de que valor almacena ParámetroB
+ * @return Valor que retorna
  */
-let puntaje = () => {
-    let puntos =0;
-    let puntajeHtml = document.getElementById("puntaje");
-    puntos = parseInt(puntajeHtml.value);
-    puntos += 20;
-    localStorage.setItem("puntos", puntos.toString());
-    //puntajeHtml.value = puntos.toString();
-}
 
 let mostrarPuntaje = () => {
-    let puntos = localStorage.getItem("puntos");
-    document.getElementsByClassName("puntaje")[0].innerHTML = puntos;
-    document.getElementsByClassName("puntaje")[1].innerHTML = puntos;
+    document.getElementById("puntajeArriba").innerText = "PUNTAJE " + (nivel*100).toString();
+    document.getElementById("puntajeFinal").innerHTML = "PUNTAJE " + (nivel*100).toString();
+    nivel++;
+    console.log(nivel);
 }
 
 /**
