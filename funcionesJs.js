@@ -116,26 +116,27 @@ let carteles = (iguales, almacenado) => {
         cartelGanaste.style.display = 'block'
         inputCargar.style.display = 'none';
         labelCargar.style.display = 'none';
-
     }
 }
 
 /**
- * Muestra y actualiza el puntaje a medida de que se pasa de nivel
+ * Muestra el puntaje a medida de que se pasa de nivel
  * @method mostrarPuntaje
  */
 
 let mostrarPuntaje = () => {
-    let nivel = localStorage.getItem("nivel");
-    document.getElementById("puntajeArriba").innerHTML = "PUNTAJE " + (nivel * 100).toString();
-    document.getElementById("puntajeFinal").innerHTML = "PUNTAJE " + (nivel * 100).toString();
-    console.log(nivel);
+    let almacenado = Number(localStorage.getItem("nivel"));
+    document.getElementById("puntajeArriba").innerHTML = "PUNTAJE " + (almacenado * 100);
+    document.getElementById("puntajeFinal").innerHTML = "PUNTAJE FINAL " + (almacenado * 100);
 }
-
+/**
+ * Actualiza el puntaje a medida de que se pasa de nivel
+ * @method guardarPuntaje
+ */
 let guardarPuntaje = () => {
-    localStorage.setItem("nivel", nivel);
+    let almacenado = Number(localStorage.getItem("nivel"));
+    localStorage.setItem("nivel", (nivel+almacenado+1).toString());
     window.open("jugar.html", "_self");
-    nivel++;
 }
 
 /**
@@ -143,6 +144,7 @@ let guardarPuntaje = () => {
  * @method botonInicio
  */
 let botonInicio = () => {
+    localStorage.clear();
     if (n < 25) {
         document.getElementById("alInicio").style.display = 'block';
     } else {
