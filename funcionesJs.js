@@ -1,5 +1,4 @@
 let n = 0;
-let nivel = 0;
 const palabras = ["Amigo", "Aviso", "Ancho", "Arena", "Asado", "arbol",
     "Banco", "Banda", "BARCO", "Bolsa", "Burro", "barro", "bajar",
     "Carpa", "Campo", "Cenar", "Costo", "Crudo", "carta", "carro", "cerro", "cobre", "cabra", "cuero", "curva",
@@ -135,16 +134,22 @@ let mostrarPuntaje = () => {
  */
 let guardarPuntaje = () => {
     let almacenado = Number(localStorage.getItem("nivel"));
-    localStorage.setItem("nivel", (nivel+almacenado+1).toString());
+    localStorage.setItem("nivel", (almacenado+1).toString());
     window.open("jugar.html", "_self");
 }
 
+/**
+ * Reinicia el contador de puntaje a cero cuando se vuelve al inicio
+ * @method limpiarPuntaje
+ */
+let limpiarPuntaje = () => {
+    localStorage.clear();
+}
 /**
  * En caso de que el usuario apriete el boton inicio mientras juega, muestra el cartel de advertencia correspondiente
  * @method botonInicio
  */
 let botonInicio = () => {
-    localStorage.clear();
     if (n < 25) {
         document.getElementById("alInicio").style.display = 'block';
     } else {
