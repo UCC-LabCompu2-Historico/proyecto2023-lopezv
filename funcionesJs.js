@@ -51,6 +51,7 @@ let cargarPalabra = (intento) => {
     for (let i = 0; i < palabras.length; i++) {
         if (palabra === palabras[i].toUpperCase()) {
             coincide = true;
+
         }
     }
     if (coincide) {
@@ -80,14 +81,17 @@ let compararPalabra = (intento) => {
     for (let i = 0; i < intento.length; i++) {
         for (let j = 0; j < almacenado.length; j++) {
             if (intento[i].toUpperCase() === almacenado[j].toUpperCase()) {
+                localStorage.setItem("LI", intento[i]);
                 if (i === j) {
                     document.getElementsByName("letra")[n + i].style.backgroundColor = "#11D147";
                     document.getElementsByClassName("celda")[n + i].style.backgroundColor = "#11D147";
                     iguales++;
+                    localStorage.setItem("Color", "#11D147");
                     break;
                 } else {
                     document.getElementsByName("letra")[n + i].style.backgroundColor = "#FEEA00";
                     document.getElementsByClassName("celda")[n + i].style.backgroundColor = "#FEEA00";
+                    localStorage.setItem("Color", "#FEEA00");
                 }
             }
         }
@@ -171,25 +175,35 @@ let x = 0;
 let dX = 1;
 let y = 0;
 let dY = 1;
+
+
 let canvas = () => {
     const canvas = document.getElementById("myCanvas");
     const ctx = canvas.getContext("2d");
     const altMaxima = canvas.height;
     const anchoMaximo = canvas.width;
 
-    let img = new Image();
-    img.src = "imagenes/favicon.ico";
+    canvas.width = canvas.width;
 
-    img.onload = function () {
-        canvas.width = canvas.width;
-        ctx.drawImage(img, x, y);
+    const vectorLetra = [];
+    const vectorColor = [];
+    let letra = localStorage.getItem("LI");
+    vectorLetra.push(letra);
+    let color = localStorage.getItem("Color");
+    vectorColor.push(color);
+    ctx.font = "15pt Press_Start_2P";
+    ctx.fillStyle = "#001014";
+    for (let i=0;i<vectorLetra.length;i++){
+        ctx.fillStyle = vectorColor[i];
+        ctx.fillText( vectorLetra[i], x, y);
     }
+
     x += dX;
     y += dY;
     if (x > anchoMaximo - 15 || x < 0) {
         dX *= -1;
     }
-    if (y > altMaxima - 15 || y < 0) {
+    if (y > altMaxima || y < 0) {
         dY *= -1;
     }
 }
