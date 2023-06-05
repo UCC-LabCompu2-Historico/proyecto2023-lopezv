@@ -175,8 +175,7 @@ let x = 0;
 let dX = 1;
 let y = 0;
 let dY = 1;
-const vectorLetra = [];
-const vectorColor = [];
+
 
 let canvas = () => {
     const canvas = document.getElementById("myCanvas");
@@ -185,13 +184,15 @@ let canvas = () => {
     const anchoMaximo = canvas.width;
 
     canvas.width = canvas.width;
-
+    const vectorLetra = [];
+    const vectorColor = [];
     let letra = localStorage.getItem("LI");
     vectorLetra.push(letra);
     let color = localStorage.getItem("Color");
     vectorColor.push(color);
     ctx.font = "15pt Press_Start_2P";
     ctx.fillStyle = "#001014";
+    console.log(vectorLetra);
     for (let i=0;i<vectorLetra.length;i++){
         ctx.fillStyle = vectorColor[i];
         ctx.fillText( vectorLetra[i], x, y);
