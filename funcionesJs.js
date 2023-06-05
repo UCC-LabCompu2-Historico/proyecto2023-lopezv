@@ -175,7 +175,8 @@ let x = 0;
 let dX = 1;
 let y = 0;
 let dY = 1;
-
+const vectorLetra = [];
+const vectorColor = [];
 
 let canvas = () => {
     const canvas = document.getElementById("myCanvas");
@@ -185,8 +186,6 @@ let canvas = () => {
 
     canvas.width = canvas.width;
 
-    const vectorLetra = [];
-    const vectorColor = [];
     let letra = localStorage.getItem("LI");
     vectorLetra.push(letra);
     let color = localStorage.getItem("Color");
