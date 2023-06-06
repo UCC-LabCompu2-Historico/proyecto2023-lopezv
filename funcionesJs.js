@@ -136,7 +136,7 @@ let mostrarPuntaje = () => {
  */
 let guardarPuntaje = () => {
     let almacenado = Number(localStorage.getItem("nivel"));
-    localStorage.setItem("nivel", (almacenado+1).toString());
+    localStorage.setItem("nivel", (almacenado + 1).toString());
     window.open("jugar.html", "_self");
 }
 
@@ -173,7 +173,7 @@ let botonSeguirJugando = () => {
 let x = [0, 30, 60, 90, 120];
 let y = [50, 80, 90, 100, 110];
 let dX = [-1, 1, -1, -1, 1];
-let dY = [1,-1, 1, -1, -1];
+let dY = [1, -1, 1, -1, -1];
 
 
 let canvas = () => {
@@ -186,15 +186,14 @@ let canvas = () => {
     const vectorLetra = [];
 
     let letra = localStorage.getItem("LI");
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < letra.length; i++) {
         vectorLetra.push(letra[i]);
     }
 
     canvas.width = canvas.width;
     ctx.font = "10pt Press_Start_2P";
     ctx.fillStyle = "white";
-
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < vectorLetra.length; i++) {
         ctx.fillText(vectorLetra[i], x[i], y[i]);
         x[i] += dX[i];
         y[i] += dY[i];
