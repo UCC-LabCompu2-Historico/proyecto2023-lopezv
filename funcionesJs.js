@@ -77,21 +77,19 @@ let cargarPalabra = (intento) => {
 let compararPalabra = (intento) => {
     let iguales = 0;
     const almacenado = localStorage.getItem("PA");
+    localStorage.setItem("LI", intento);
     console.log(almacenado);
     for (let i = 0; i < intento.length; i++) {
         for (let j = 0; j < almacenado.length; j++) {
             if (intento[i].toUpperCase() === almacenado[j].toUpperCase()) {
-                localStorage.setItem("LI", intento[i]);
                 if (i === j) {
                     document.getElementsByName("letra")[n + i].style.backgroundColor = "#11D147";
                     document.getElementsByClassName("celda")[n + i].style.backgroundColor = "#11D147";
                     iguales++;
-                    localStorage.setItem("Color", "#11D147");
                     break;
                 } else {
                     document.getElementsByName("letra")[n + i].style.backgroundColor = "#FEEA00";
                     document.getElementsByClassName("celda")[n + i].style.backgroundColor = "#FEEA00";
-                    localStorage.setItem("Color", "#FEEA00");
                 }
             }
         }
@@ -171,39 +169,42 @@ let botonSeguirJugando = () => {
  * canvas que imita el salvapantallas de los dvd
  * @method canvas
  */
-let x = 0;
-let dX = 1;
-let y = 0;
-let dY = 1;
+
+let x = [0, 30, 60, 90, 120];
+let y = [50, 80, 90, 100, 110];
+let dX = [-1, 1, -1, -1, 1];
+let dY = [1,-1, 1, -1, -1];
 
 
 let canvas = () => {
+
     const canvas = document.getElementById("myCanvas");
     const ctx = canvas.getContext("2d");
     const altMaxima = canvas.height;
     const anchoMaximo = canvas.width;
 
-    canvas.width = canvas.width;
     const vectorLetra = [];
-    const vectorColor = [];
+
     let letra = localStorage.getItem("LI");
-    vectorLetra.push(letra);
-    let color = localStorage.getItem("Color");
-    vectorColor.push(color);
-    ctx.font = "15pt Press_Start_2P";
-    ctx.fillStyle = "#001014";
-    console.log(vectorLetra);
-    for (let i=0;i<vectorLetra.length;i++){
-        ctx.fillStyle = vectorColor[i];
-        ctx.fillText( vectorLetra[i], x, y);
+    for (let i = 0; i < 5; i++) {
+        vectorLetra.push(letra[i]);
     }
 
-    x += dX;
-    y += dY;
-    if (x > anchoMaximo - 15 || x < 0) {
-        dX *= -1;
+    canvas.width = canvas.width;
+    ctx.font = "10pt Press_Start_2P";
+    ctx.fillStyle = "white";
+
+    for (let i = 0; i < 5; i++) {
+        ctx.fillText(vectorLetra[i], x[i], y[i]);
+        x[i] += dX[i];
+        y[i] += dY[i];
+
+        if (x[i] > anchoMaximo - 15 || x[i] < 0) {
+            dX[i] *= -1;
+        }
+        if (y[i] > altMaxima || y[i] <= 12) {
+            dY[i] *= -1;
+        }
     }
-    if (y > altMaxima || y < 0) {
-        dY *= -1;
-    }
+
 }
