@@ -185,11 +185,9 @@ let canvas = () => {
     const almacenado = localStorage.getItem("PA");
     const vectorLetra = [];
     let letra = localStorage.getItem("LI");
-    console.log("letra",letra);
-    if (letra == null){
-        vectorLetra.push("W","O","R","D", "L", "E");
-    }
-    else {
+    if (letra == null) {
+        vectorLetra.push("W", "O", "R", "D", "L", "E");
+    } else {
         for (let i = 0; i < letra.length; i++) {
             vectorLetra.push(letra[i]);
         }
@@ -200,13 +198,12 @@ let canvas = () => {
 
     //ctx.fillStyle = "white";
     for (let i = 0; i < vectorLetra.length; i++) {
-        if (letra == null){
-            if (vectorLetra[i] === 'O' || vectorLetra[i] === 'L'){
+        if (letra == null) {
+            if (vectorLetra[i] === 'O' || vectorLetra[i] === 'L') {
                 ctx.fillStyle = "#11D147";
-            }
-            else if (vectorLetra[i] === 'E'){
-                ctx.fillStyle = "#FEEA00"}
-            else {
+            } else if (vectorLetra[i] === 'E') {
+                ctx.fillStyle = "#FEEA00"
+            } else {
                 ctx.fillStyle = "white";
             }
         } else {
@@ -234,7 +231,10 @@ let canvas = () => {
     }
 
 }
-
+/**
+ * limpia el canvas para que cada vez que se pasa de nivel muestre la palabra worlde, y no la ultima palabra del nivel pasado.
+ * @method limpiarCanvas
+ */
 let limpiarCanvas = () => {
     localStorage.removeItem("LI");
 }

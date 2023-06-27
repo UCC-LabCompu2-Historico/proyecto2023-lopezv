@@ -38,10 +38,12 @@ footer {
     text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
 
 }
-.tablero caption{
+
+.tablero caption {
     font-size: 15px;
     text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black;
 }
+
 .comojugar {
     padding: 0;
 }
@@ -186,7 +188,8 @@ input {
 }
 
 #ingresarPalabra {
-    text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black;    margin-top: 30px;
+    text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black;
+    margin-top: 30px;
     padding: 10px;
     border-radius: 5px;
 }
