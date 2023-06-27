@@ -33,7 +33,7 @@ const palabras = ["Amigo", "Aviso", "Ancho", "Arena", "Asado", "arbol",
 let palabraAAdivinar = () => {
     let indiceAleatorio = Math.floor(Math.random() * palabras.length);
     let palabraAleatoria = palabras[indiceAleatorio];
-    localStorage.setItem("PA", palabraAleatoria);
+    localStorage.setItem("PA", palabraAleatoria.toUpperCase());
 }
 
 /**
@@ -170,10 +170,10 @@ let botonSeguirJugando = () => {
  * @method canvas
  */
 
-let x = [0, 30, 60, 90, 120];
-let y = [50, 80, 90, 100, 110];
-let dX = [-1, 1, -1, -1, 1];
-let dY = [1, -1, 1, -1, -1];
+let x = [0, 30, 60, 90, 120, 150];
+let y = [50, 80, 90, 100, 110, 120];
+let dX = [-1, 1, -1, -1, 1, -1];
+let dY = [1, -1, 1, -1, -1, 1];
 
 
 let canvas = () => {
@@ -182,18 +182,44 @@ let canvas = () => {
     const ctx = canvas.getContext("2d");
     const altMaxima = canvas.height;
     const anchoMaximo = canvas.width;
-
+    const almacenado = localStorage.getItem("PA");
     const vectorLetra = [];
-
     let letra = localStorage.getItem("LI");
-    for (let i = 0; i < letra.length; i++) {
-        vectorLetra.push(letra[i]);
+    console.log("letra",letra);
+    if (letra == null){
+        vectorLetra.push("W","O","R","D", "L", "E");
+    }
+    else {
+        for (let i = 0; i < letra.length; i++) {
+            vectorLetra.push(letra[i]);
+        }
     }
 
     canvas.width = canvas.width;
     ctx.font = "10pt Press_Start_2P";
-    ctx.fillStyle = "white";
+
+    //ctx.fillStyle = "white";
     for (let i = 0; i < vectorLetra.length; i++) {
+        if (letra == null){
+            if (vectorLetra[i] === 'O' || vectorLetra[i] === 'L'){
+                ctx.fillStyle = "#11D147";
+            }
+            else if (vectorLetra[i] === 'E'){
+                ctx.fillStyle = "#FEEA00"}
+            else {
+                ctx.fillStyle = "white";
+            }
+        } else {
+
+            if (vectorLetra[i].toUpperCase() === almacenado[i]) {
+                ctx.fillStyle = "#11D147";
+            } else if (almacenado.includes(vectorLetra[i].toUpperCase())) {
+                ctx.fillStyle = "#FEEA00"
+            } else {
+                ctx.fillStyle = "white";
+            }
+
+        }
         ctx.fillText(vectorLetra[i], x[i], y[i]);
         x[i] += dX[i];
         y[i] += dY[i];
@@ -204,6 +230,11 @@ let canvas = () => {
         if (y[i] > altMaxima || y[i] <= 12) {
             dY[i] *= -1;
         }
+
     }
 
+}
+
+let limpiarCanvas = () => {
+    localStorage.removeItem("LI");
 }
