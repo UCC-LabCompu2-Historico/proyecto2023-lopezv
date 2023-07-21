@@ -7,7 +7,7 @@ Estructura de Proyecto Lab de Compu II - 2023
 - Autor: Agustin Lopez Villagra
 - Tecnologias usadas: HTML5, CSS3
 - Contenido de la pagina: Clon de "Wordle"
-- Link al sitio: https://ucc-labcompu2.github.io/proyecto2023-lopezv/
+- Link al sitio: https://ucc-labcompu2-historico.github.io/proyecto2023-lopezv/
 
 ## Requisitos del Primer Parcial
 
